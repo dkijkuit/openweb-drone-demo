@@ -10,10 +10,10 @@ name: demo
 steps:
   - name: Hello
     image: hello-world:latest
-#  - name: Maven test
-#    image: maven:3.9.0-eclipse-temurin-19
-#    commands:
-#      - mvn test
+  - name: Maven test
+    image: maven:3.9.0-eclipse-temurin-19
+    commands:
+      - mvn test
 #  - name: Maven build
 #    image: maven:3.9.0-eclipse-temurin-19
 #    commands:
