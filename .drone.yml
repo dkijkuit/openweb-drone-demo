@@ -1,14 +1,12 @@
 kind: pipeline
 type: kubernetes
-name: demo
+name: drone-demo
 
 trigger:
-  branch:
-    - main
-    - bugfix/*
-    - feature/*
-  event:
-    - push
+  ref:
+    - refs/heads/main
+    - refs/heads/**
+    - refs/pull/*/head
 steps:
   - name: Hello
     image: hello-world:latest
