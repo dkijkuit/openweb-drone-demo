@@ -1,0 +1,7 @@
+{
+  "auths": {
+    "http://core.harbor.internal/harbor": {
+      "auth": "YWRtaW46SGFyYm9yMTIzNDU="
+    }
+  }
+}
