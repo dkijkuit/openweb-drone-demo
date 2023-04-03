@@ -10,22 +10,22 @@ name: demo
 steps:
   - name: Hello
     image: hello-world:latest
-  - name: Maven test
-    image: maven:3.9.0-eclipse-temurin-19
-    commands:
-      - mvn test
-  - name: Maven build
-    image: maven:3.9.0-eclipse-temurin-19
-    commands:
-      - mvn clean package -DskipTests
-  - name: Build image and push
-    image: gcr.io/kaniko-project/executor:v1.9.0-debug
-    environment:
-      USERNAME:
-        from_secret: HARBOR_USERNAME
-      PASSWORD:
-        from_secret: HARBOR_PASSWORD
-    commands:
-      - 
-      - cp $DRONE_WORKSPACE/config.json /kaniko/.docker/
-      - /kaniko/executor --dockerfile $DRONE_WORKSPACE/Dockerfile --context $DRONE_WORKSPACE --insecure --destination core.harbor.internal/openweb/drone-demo:0.1
+#  - name: Maven test
+#    image: maven:3.9.0-eclipse-temurin-19
+#    commands:
+#      - mvn test
+#  - name: Maven build
+#    image: maven:3.9.0-eclipse-temurin-19
+#    commands:
+#      - mvn clean package -DskipTests
+#  - name: Build image and push
+#    image: gcr.io/kaniko-project/executor:v1.9.0-debug
+#    environment:
+#      USERNAME:
+#        from_secret: HARBOR_USERNAME
+#      PASSWORD:
+#        from_secret: HARBOR_PASSWORD
+#    commands:
+#      -
+#      - cp $DRONE_WORKSPACE/config.json /kaniko/.docker/
+#      - /kaniko/executor --dockerfile $DRONE_WORKSPACE/Dockerfile --context $DRONE_WORKSPACE --insecure --destination core.harbor.internal/openweb/drone-demo:0.1
