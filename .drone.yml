@@ -39,7 +39,7 @@ steps:
 ---
 kind: pipeline
 type: kubernetes
-name: deploy
+name: deploy-app
 
 steps:
   - name: Deploy hello
